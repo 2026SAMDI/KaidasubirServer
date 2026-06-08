@@ -3,25 +3,24 @@ package com.example.kaidasubirserver.domain.user.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
-@SuperBuilder //이거 왜쓰는지 아시는분
 @NoArgsConstructor
 @Table
-
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //id 번호 자동으로 올라감
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String username;
 
+    @Column(nullable = false)
     private String password;
 
-    public User(String username, String password) { // 새 유저 만들 때 사용
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
