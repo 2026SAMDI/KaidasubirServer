@@ -5,9 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Long> { //User = 관리 할 Entity Long = Entity 타입
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    Optional<User> findByUsername(String username); //username으로 조회
+    Optional<User> findByEmail(String email);
 
-    boolean existsByUsername(String username);
 }
