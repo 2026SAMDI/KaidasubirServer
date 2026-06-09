@@ -1,5 +1,7 @@
 package com.example.kaidasubirserver.domain.user.dto.request;
 
+// 회원가입 요청 데이터를 받는 request
+
 public class SignupRequest {
 
     private String username;
